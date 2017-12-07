@@ -60,7 +60,6 @@ iCloud = (() => {
 			let keyvaluechange = await send_json_request(
 				`https://p31-keyvalueservice.icloud.com/json/sync?clientBuildNumber=&clientId=&dsid=${self.dsid}`,
 				{
-					"apns-token": "APNSTOKENLMAOXD",
 					"apps": [{
 						"bundle-id": "com.apple.Safari",
 						"kvstore-id": "com.apple.Safari.SyncedTabs",
@@ -104,6 +103,10 @@ iCloud = (() => {
 			}
 			self.dsid = validate.dsInfo.dsid
 			return true
+		},
+		async logout() {
+			let logout = await send_json_request(`https://setup.icloud.com/setup/ws/1/logout?clientBuildNumber=&clientId=&dsid=${self.dsid}`)
+			return !!logout.success
 		}
 	}
 	return self

@@ -1,0 +1,197 @@
+body {
+	margin: 0;
+	padding: 40px 40px;
+    width: 200px;
+	font-size: 14px;
+	line-height: 1.2;
+}
+h1 {
+	margin: 0;
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+h2 {
+	margin: 0;
+	font-size: 16px;
+	padding: 4px 0;
+}
+ul {
+	margin: 0;
+	list-style: none;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color: #222;
+}
+a:hover {
+	color: #555;
+	text-decoration: underline;
+}
+.loading-page,
+.login-page,
+.sync-page,
+.list-page,
+.settings-page {
+	display: none;
+}
+body.loading .loading-page,
+body.login .login-page,
+body.sync .sync-page,
+body.list .list-page,
+body.settings .settings-page {
+	display: flex;
+}
+button.btn-back, #disabled-overlay .modal-close {
+	display: block;
+	width: 25px; height: 25px;
+	font-size: 15px;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 50%;
+	border: 0; outline: 0;
+}
+
+#disabled-overlay {
+	display: none;
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background-color: transparent;
+	z-index: 30;
+}
+#disabled-overlay.show {
+	display: flex;
+}
+#disabled-overlay.modal {
+	padding: 30px;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+#disabled-overlay.modal>.inner {
+	display: flex;
+}
+#disabled-overlay>.inner {
+	flex: 1;
+	display: none;
+	flex-flow: column;
+	align-items: stretch;
+	justify-content: space-around;
+	background-color: #f0f0f0;
+	padding: 10px;
+}
+#disabled-overlay .modal-close {
+	position: absolute;
+	top: 17.5px;
+	right: 17.5px;
+}
+.modal-list {
+	flex: 1;
+	overflow: auto;
+	margin: -10px;
+	padding: 5px;
+}
+.modal-list>a {
+	display: block;
+	padding-bottom: 5px;
+}
+
+.sync-page {
+	flex-flow: column;
+	align-items: stretch;
+}
+.sync-page .btns {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.btns > button {
+	font-size: 20px;
+	flex: 0 0 60px;
+	line-height: 60px;
+	height: 60px;
+	text-align: center;
+	border: 0;
+	border-radius: 50%;
+	outline: 0;
+	transition: box-shadow 200ms ease;
+}
+.btns > button:active {
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.4) inset;
+}
+#sync-btn-sync {
+	background-color: #42a4f4;
+}
+#sync-btn-list {
+	background-color: #b5b5b5;
+}
+#sync-btn-settings {
+	flex: 0 0 40px;
+	line-height: 40px; height: 40px;
+	font-size: 16px;
+	background-color: #b5b5b5;
+}
+.login-page {
+	flex-flow: column;
+	padding-bottom: 20px;
+}
+.login-page input {
+	border: 1px solid #f0f0f0;
+	border-radius: 4px;
+	line-height: 30px;
+	font-size: 16px;
+	padding: 0 10px;
+}
+.login-page button {
+	border: 0;
+	background-color: #f0f0f0;
+	border-radius: 4px;
+	line-height: 30px;
+	font-size: 16px;
+	padding: 0 10px;
+	outline: 0;
+}
+button.btn-back {
+	position: absolute;
+	right: 20px;
+}
+#login-manual {
+	line-height: 15px;
+	font-size: 12px;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0; right: 0;
+	text-align: center;
+}
+#login-error {
+	display: none;
+}
+#login-error.show {
+	display: block;
+}
+
+.list-page {
+	flex-flow: column;
+	align-items: stretch;
+}
+
+#list-devs {
+	display: flex;
+	flex-flow: column;
+}
+#list-devs > a, #list-devs > h2 {
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.settings-page {
+	flex-flow: column;
+	align-items: stretch;
+}
+.settings-options {
+	display: flex;
+	flex-flow: column;
+}
+.settings-options > a {
+	padding-bottom: 3px;
+}

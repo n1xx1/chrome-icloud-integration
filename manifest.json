@@ -15,7 +15,7 @@
 	},
 	"permissions": [
 		"tabs", "webRequest", "webRequestBlocking",
-		"storage", "cookies", "alarms",
+		"storage", "alarms",
 		"https://*.icloud.com/*"
 	]
 }
